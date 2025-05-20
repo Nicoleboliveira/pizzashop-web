@@ -4,6 +4,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import react from "eslint-plugin-react";
+import eslintPluginSimpleImportSort from "eslint-plugin-simple-import-sort"
 
 export default tseslint.config(
   { ignores: ["dist", "node_modules"] },
@@ -28,6 +29,7 @@ export default tseslint.config(
       react,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
+      "simple-import-sort": eslintPluginSimpleImportSort,
     },
     settings: {
       react: {
@@ -59,6 +61,9 @@ export default tseslint.config(
       "no-console": ["warn", { allow: ["warn", "error"] }],
       "no-debugger": "warn",
       "prefer-const": "warn",
+      "simple-import-sort/imports":"error",
+      
+
     },
   }
 );
