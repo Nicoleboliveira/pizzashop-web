@@ -1,13 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
 export function AuthLayout() {
-    return(
-        <div>
-            <h1>Autenticação</h1>
+  return (
+    <div>
+      <h1>Autenticação</h1>
 
-            <div>
-                <Outlet />
-            </div>
-        </div>
-    )
+      <div>
+        <Outlet />
+      </div>
+    </div>
+  );
 }
