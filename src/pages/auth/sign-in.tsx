@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { toast } from 'sonner';
@@ -7,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { useDocumentTitle } from '@/hook/title';
 
 const signInForm = z.object({
   email: z.string().email(),
@@ -27,10 +27,9 @@ export function SignIn() {
 
     toast.success('Enviamos um link de autenticação para seu e-mail');
   }
+  useDocumentTitle('Login');
   return (
     <>
-      <Helmet title="Login" />
-
       <div className="p-8">
         <Button variant="ghost" asChild className="absolute top-8 right-8">
           <Link to="/sign-up">Novo estabelecimento</Link>

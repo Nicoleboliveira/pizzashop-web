@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { toast } from 'sonner';
@@ -7,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDocumentTitle } from '@/hook/title';
 
 const signUpForm = z.object({
   email: z.string().email(),
@@ -42,10 +42,9 @@ export function SignUp() {
       toast.error('Erro ao cadastrar restaurante.');
     }
   }
+  useDocumentTitle('Cadastro');
   return (
     <>
-      <Helmet title="Cadastro" />
-
       <div className="p-8">
         <Button variant="ghost" asChild className="absolute top-8 right-8">
           <Link to="/sign-in">Fazer login</Link>

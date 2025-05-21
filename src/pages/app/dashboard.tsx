@@ -1,9 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import { useDocumentTitle } from '@/hook/title';
 
 export function Dashboard() {
+  useDocumentTitle('Dashboard');
   return (
     <>
-      <Helmet title="Dashboard" />
       <h1>Dashboard</h1>
     </>
   );
