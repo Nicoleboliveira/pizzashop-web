@@ -1,15 +1,22 @@
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import { TableCell, TableRow } from '@/components/ui/table';
 import { ArrowRight, Search, X } from 'lucide-react';
+import { OrderDetails } from './order-details';
 
 export function OrderTableRow() {
   return (
     <TableRow>
       <TableCell>
-        <Button variant="outline" size="xs">
-          <Search className="h-3 w-3 text-current" />
-          <span className="sr-only">Detalhes do pedido</span>
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline" size="xs">
+              <Search className="h-3 w-3 text-current" />
+              <span className="sr-only">Detalhes do pedido</span>
+            </Button>
+          </DialogTrigger>
+          <OrderDetails />
+        </Dialog>
       </TableCell>
       <TableCell className="font-mono text-xs font-medium">
         7c9e6679-7425-40de-944b
@@ -24,7 +31,7 @@ export function OrderTableRow() {
       <TableCell className="font-medium">
         Nicole Brenda Fernandes Fraga Oliveira{' '}
       </TableCell>
-      <TableCell className="font-medium">R$ 150,00</TableCell>
+      <TableCell className="font-medium">R$ 200,00</TableCell>
       <TableCell>
         <Button variant="outline" size="xs">
           <ArrowRight className="mr-2 h-3 w-3 text-current" />
