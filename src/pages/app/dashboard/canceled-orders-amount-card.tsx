@@ -13,6 +13,8 @@ export function MonthCanceledOrdersAmountCard() {
       </CardHeader>
       <CardContent className="space-y-1">
         <span className="text-2xl font-bold tracking-tight">32</span>
+      </CardContent>
+      <CardContent>
         <p className="text-muted-foreground text-xs">
           <span className="text-emerald-500 dark:text-emerald-400">-2%</span> em
           relação ao mês passado
